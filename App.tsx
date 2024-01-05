@@ -1,11 +1,18 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
+import HomeStack from './src/routes/HomeStack';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   return (
-    <View style={styles.screen}>
-      <Text>Komal</Text>
-    </View>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <SafeAreaView style={styles.screen} edges={['top']}>
+          <HomeStack />
+        </SafeAreaView>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
