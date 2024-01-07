@@ -2,23 +2,21 @@ import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 // Files
-import Todo from '../screens/Todo';
-import AddTodo from '../screens/AddTodo';
 import routes from '../constants/routes';
+import Login from '../screens/Login';
 
 const Stack = createNativeStackNavigator();
 
-const HomeStack = () => {
+const AuthStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName={routes.TODO}
+      initialRouteName={routes.LOGIN}
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name={routes.TODO} component={Todo} />
-      <Stack.Screen name={routes.ADD_TODO} component={AddTodo} />
+      <Stack.Screen name={routes.LOGIN} component={Login} />
     </Stack.Navigator>
   );
 };
 
-export default HomeStack;
+export default AuthStack;
